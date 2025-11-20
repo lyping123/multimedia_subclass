@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 1 Demo</title>
+  <link rel="stylesheet" href="styles-demo.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Aquarium Form</h1>
+    <p class="intro">Today we learn HTML & CSS basics.</p>
+  </header>
+
+  <section id="info">
+    <h2>About</h2>
+    <p>This page collects visitor interests for future events.</p>
+    <img src="image/reef.jpeg" alt="Colorful coral reef" width="300" />
+  </section>
+
+  <section id="signup" aria-label="Visitor interest form">
+    <h2>Sign Up</h2>
+    <form id="interestForm" action="#" method="post">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div class="field">
+        <label for="favorite">Favorite Exhibit</label>
+        <select id="favorite" name="favorite">
+          <option value="reef">Coral Reef</option>
+          <option value="shark">Sharks</option>
+          <option value="jellyfish">Jellyfish</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Any interests or questions..."></textarea>
+      </div>
+      <button type="submit" class="primary-btn">Submit</button>
+    </form>
+    <div id="message" class="hidden" role="alert"></div>
+  </section>
+
+  <script src="demo.js"></script>
+</body>
+</html>

@@ -1,41 +1,10 @@
-# BlueDepth Aquarium — Beginner Starter
+# Multimedia Class
 
-A simple HTML/CSS/JS project for a multimedia class. Students build a promotional aquarium page using a hero, a small gallery, one short video, and a call-to-action.
+For this leasson of this classes, you will learn how to structure a page with semantic HTML sections, style layout, colors, and responsive grid with CSS, and animation of using keyframe
+s and transitions with JavaScript.
 
-## Learning Objectives
-- Structure a page with semantic HTML sections
-- Style layout, colors, and responsive grid with CSS
-- Embed a short `<video>` with controls
-- Write a tiny script to update the current year
 
-## What’s Inside
-- `index.html` — Minimal page with hero, gallery, video, and visit section
-- `styles.css` — Basic styles (header, hero, gallery grid)
-- `script.js` — 1-line enhancement: updates the footer year
 
-## Try It (XAMPP)
-Place the folder here (already done):
-```
-C:\xampp5\htdocs\multimedia_class
-```
-Start Apache in XAMPP, then open:
-```
-http://localhost/multimedia_class/
-```
+## Lessons
+- [Lesson 1](./lesson-day1.html-css-basics.md) — HTML & CSS Foundations (24/11/2025)
 
-## Class Flow (45–60 min)
-1. HTML scaffold: header, hero, gallery, footer
-2. CSS basics: colors, spacing, grid for gallery
-3. Add `<video controls>` and test playback
-4. Tiny JS: set the current year in the footer
-5. Polishing: buttons, hover states, responsive checks
-
-## Suggested Exercises
-- Replace gallery placeholders with your own images
-- Change theme colors in `:root` and button styles
-- Swap the video source to a clip you choose
-- Add one more section (e.g., Tickets or About)
-
-## Notes
-- The sample video source uses a public clip (Coverr). Any small MP4 will work.
-- Keep assets small for quick loading in class.
