@@ -50,6 +50,8 @@ By the end of today, students will be able to:
 ```
 Behavior: Items flow left→right; when space runs out they wrap to the next line. Widths are flexible (`flex:1 1 140px`). No concept of explicit rows; wrapping creates them implicitly.
 
+<img src="image/lesson2 flex.png" />
+
 ### Grid Example (Defined Tracks)
 ```html
 <div class="grid-box">
@@ -68,6 +70,9 @@ Behavior: Items flow left→right; when space runs out they wrap to the next lin
 .grid-box .d{grid-column:1 / -1}
 ```
 Behavior: We explicitly declare 2 columns and 2 rows. Individual items can be moved or stretched across tracks (`.c` repositioned, `.d` spans both columns) without changing HTML order.
+
+<img src="image/lesson2 grib.png" />
+
 
 | Feature | Flexbox | Grid |
 |---------|--------|------|

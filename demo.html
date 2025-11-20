@@ -1,0 +1,15 @@
+<div class="grid-box">
+  <div class="cell a">A</div>
+  <div class="cell b">B</div>
+  <div class="cell c">C</div>
+  <div class="cell d">D</div>
+</div>
+
+<style>
+.grid-box{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:120px 120px;gap:.75rem;padding:.5rem;background:#efe}
+.grid-box .cell{display:flex;justify-content:center;align-items:center;font-weight:600;background:#fff;border:1px solid #cdd;border-radius:.5rem}
+/* Reposition C to row 1 col 2 */
+.grid-box .c{grid-column:2;grid-row:1}
+/* Place D spanning two columns */
+.grid-box .d{grid-column:1 / -1}
+</style>
