@@ -35,7 +35,7 @@ By the end of today, students will be able to:
 - **Grid** is two-dimensional (rows AND columns). You define an explicit track structure; items can be positioned in both directions without source order changes.
 
 ### Flexbox Example (Row that Wraps)
-
+```html
 <div class="flex-row">
   <div class="item">1</div>
   <div class="item">2</div>
@@ -43,32 +43,30 @@ By the end of today, students will be able to:
   <div class="item">4</div>
   <div class="item">5</div>
 </div>
-
-<style>
+```
+```css
 .flex-row{display:flex;flex-wrap:wrap;gap:.75rem;padding:.5rem;background:#eef}
 .flex-row .item{flex:1 1 140px;min-width:140px;padding:1rem;text-align:center;background:#fff;border:1px solid #ccd;border-radius:.5rem}
-</style>
-
+```
 Behavior: Items flow left→right; when space runs out they wrap to the next line. Widths are flexible (`flex:1 1 140px`). No concept of explicit rows; wrapping creates them implicitly.
 
 ### Grid Example (Defined Tracks)
-
+```html
 <div class="grid-box">
   <div class="cell a">A</div>
   <div class="cell b">B</div>
   <div class="cell c">C</div>
   <div class="cell d">D</div>
 </div>
-
-<style>
+```
+```css
 .grid-box{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:120px 120px;gap:.75rem;padding:.5rem;background:#efe}
 .grid-box .cell{display:flex;justify-content:center;align-items:center;font-weight:600;background:#fff;border:1px solid #cdd;border-radius:.5rem}
 /* Reposition C to row 1 col 2 */
 .grid-box .c{grid-column:2;grid-row:1}
 /* Place D spanning two columns */
 .grid-box .d{grid-column:1 / -1}
-</style>
-
+```
 Behavior: We explicitly declare 2 columns and 2 rows. Individual items can be moved or stretched across tracks (`.c` repositioned, `.d` spans both columns) without changing HTML order.
 
 | Feature | Flexbox | Grid |
