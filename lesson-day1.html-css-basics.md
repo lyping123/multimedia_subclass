@@ -84,26 +84,133 @@ By the end of today, students will be able to:
 </body>
 </html>
 ```
+## 4.2 CSS Styling Table
+| Property | Description | Sample |
+|----------|-------------|--------|
+| padding | Space inside the element between content and border | `padding: 1rem;` |
+| margin | Space outside the element separating it from others | `margin: 0 auto 1rem;` |
+| text-align | Horizontal alignment of inline content | `text-align: center;` |
+| background | Background color (or image) of an element | `background: #f5fbff;` |
+| color | Text (foreground) color | `color: #0f2233;` |
+| border-radius | Rounds the corners of the element box | `border-radius: .5rem;` |
+| display | Defines element’s layout behavior | `display: grid;` |
+| line-height | Vertical spacing between lines of text | `line-height: 1.5;` |
+| font-family | Typeface(s) used for text rendering | `font-family: system-ui, Arial, sans-serif;` |
+| border | Outline around the element’s box | `border: 1px solid #d9e6f2;` |
 
-### 4.2 Basic Styles (`styles-demo.css`)
+
+
+### 4.2.1 Basic Styles (`styles-demo.css`)
 ```css
-*{box-sizing:border-box;font-family:system-ui,Arial,sans-serif;}
-body{margin:0;background:#f5fbff;color:#0f2233;line-height:1.5;padding:1rem;}
-header{text-align:center;padding:1rem 0;margin-bottom:1rem;background:#ffffff;border:1px solid #d9e6f2;border-radius:.5rem;}
-.intro{color:#4b6476;}
-section{max-width:720px;margin:0 auto 1.5rem;padding:1rem;background:#ffffff;border:1px solid #d9e6f2;border-radius:.5rem;}
-#info img{display:block;margin:0.5rem auto;border-radius:.5rem;border:2px solid #89c8ff;}
-form{display:grid;gap:1rem;}
-.field{display:grid;gap:.35rem;}
-label{font-weight:600;}
-input,select,textarea{padding:.6rem .7rem;border:1px solid #b7c9d9;border-radius:.5rem;font-size:1rem;background:#fdfdfd;}
-input:focus,select:focus,textarea:focus{outline:2px solid #0077ff;background:#ffffff;}
-.primary-btn{cursor:pointer;padding:.7rem 1.1rem;font-size:1rem;border:none;border-radius:.6rem;background:#0077ff;color:#fff;font-weight:600;transition:background .3s, transform .15s;}
-.primary-btn:hover{background:#005fcc;}
-.primary-btn:active{transform:scale(.96);}
-#message{margin-top:1rem;padding:.8rem 1rem;border-radius:.5rem;border:1px solid #0077ff;background:#e6f2ff;}
-.hidden{display:none;}
-@media (max-width:600px){body{padding:.5rem;}section{padding:.8rem;}form{gap:.75rem;}}
+*
+{
+    box-sizing:border-box;
+    font-family:system-ui,Arial,sans-serif;
+}
+body{
+    margin:0;background:#f5fbff;
+    color:#0f2233;
+    line-height:1.5;
+    padding:1rem;
+}
+header{
+    text-align:center;
+    padding:1rem 0;
+    margin-bottom:1rem;
+    background:#ffffff;
+    border:1px solid #d9e6f2;
+    border-radius:.5rem;
+}
+.intro{
+    color:#4b6476;
+}
+section {
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #d9e6f2;
+    border-radius: 0.5rem;
+}
+
+#info img {
+    display: block;
+    margin: 0.5rem auto;
+    border: 2px solid #89c8ff;
+    border-radius: 0.5rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+.field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #b7c9d9;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #fdfdfd;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #0077ff;
+    background: #fff;
+}
+
+.primary-btn {
+    cursor: pointer;
+    padding: 0.7rem 1.1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: #0077ff;
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.15s;
+}
+
+.primary-btn:hover {
+    background: #005fcc;
+}
+
+
+#message {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #0077ff;
+    background: #e6f2ff;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+    section {
+        padding: 0.8rem;
+    }
+    form {
+        gap: 0.75rem;
+    }
+}
 ```
 
 ### 4.3 Simple JavaScript (`demo.js`)
@@ -149,8 +256,6 @@ form.addEventListener('submit', function(e){
 - Introduce a subtle keyframe animation on button hover (pulse). 
 
 ## 7. Quick Reference Snippets
-- Linking CSS: `<link rel="stylesheet" href="styles-demo.css" />`
-- Linking JS: `<script src="demo.js"></script>` (near end of `body`).
 - Button hover (CSS): `.primary-btn:hover { background:#005fcc; }`
 - Textarea attribute: `<textarea rows="4" placeholder="Your message..."></textarea>`
 
@@ -179,7 +284,6 @@ Create a personal feedback form:
 
 ## 11. Instructor Checklist
 - [ ] Objectives visible at start
-- [ ] Demo files prepared (`styles-demo.css`, `demo.js`)
 - [ ] Image assets accessible
 - [ ] Students create file from scratch (avoid copy-paste at first)
 - [ ] Reinforce accessibility and semantics
