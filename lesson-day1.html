@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Day 1 — HTML & CSS Foundations</title>
+<meta name="description" content="Teaching material: Day 1 HTML & CSS foundations lesson plan." />
+<style>
+  :root{ --bg:#f5fbff; --surface:#ffffff; --text:#0f2233; --muted:#4b6476; --accent:#0077ff; --border:#d9e6f2; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+  header{position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--border);padding:.9rem 1rem;z-index:10;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;}
+  header h1{font-size:1.25rem;margin:0;}
+  nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-left:auto;}
+  nav a{padding:.4rem .6rem;text-decoration:none;color:var(--text);border-radius:.4rem;font-size:.85rem;border:1px solid transparent;}
+  nav a:hover{background:var(--border);}
+  main{max-width:1000px;margin:0 auto;padding:1.25rem 1rem 3rem;}
+  section{margin-bottom:2.25rem;scroll-margin-top:5.5rem;}
+  section h2{margin:.25rem 0 1rem;font-size:1.15rem;border-left:4px solid var(--accent);padding-left:.5rem;}
+  .lead{font-size:.95rem;color:var(--muted);margin:.25rem 0 1.2rem;}
+  ul,ol{padding-left:1.25rem;}
+  code, pre code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;}
+  pre{background:#0f223305;border:1px solid var(--border);padding:.8rem 1rem;border-radius:.6rem;overflow:auto;font-size:.85rem;line-height:1.4;margin:1rem 0;}
+  table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.85rem;}
+  th,td{border:1px solid var(--border);padding:.45rem .6rem;text-align:left;}
+  thead{background:var(--surface);}
+  .pill{display:inline-block;background:var(--accent);color:#fff;padding:.2rem .55rem;border-radius:.6rem;font-size:.65rem;letter-spacing:.5px;margin-left:.35rem;vertical-align:middle;}
+  .grid-2{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .callout{background:#e6f2ff;border:1px solid var(--accent);padding:.75rem 1rem;border-radius:.6rem;margin:1rem 0;}
+  .checklist li{margin:.3rem 0;}
+  footer{margin-top:3rem;text-align:center;font-size:.75rem;color:var(--muted);padding:2rem 1rem;}
+  a.inline{color:var(--accent);}a.inline:hover{text-decoration:none;border-bottom:1px solid var(--accent);}
+  .toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none;}
+  .toc a{background:var(--surface);border:1px solid var(--border);padding:.4rem .7rem;border-radius:.5rem;font-size:.7rem;text-decoration:none;color:var(--text);}
+  .toc a:hover{background:var(--border);} 
+  .small{font-size:.75rem;color:var(--muted);}
+  .two-col{columns:2 280px;column-gap:2rem;}
+  @media (max-width:640px){header{justify-content:center;} nav{margin-left:0;} pre{font-size:.75rem;} .two-col{columns:1;} }
+  @media (prefers-color-scheme:dark){ :root{ --bg:#0a1016; --surface:#141f29; --text:#e6eff7; --muted:#9bb0bf; --accent:#5aa2ff; --border:#223140;} pre{background:#22314066;} table th,table td{border-color:#223140;} .callout{background:#1d3144;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Day 1 — HTML & CSS Foundations</h1>
+  <nav aria-label="Page sections">
+    <a href="#outcomes">Outcomes</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#cheatsheet">Cheat Sheet</a>
+    <a href="#demo">Demo</a>
+    <a href="#activity">Activity</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#homework">Homework</a>
+    <a href="#extras">Extras</a>
+  </nav>
+</header>
+<main>
+  <p class="lead">Lesson plan and teaching material for Monday 24/11/2025. Use this as your instructor guide or share read‑only with students.</p>
+  <ul class="toc" aria-label="Quick navigation">
+    <li><a href="#outcomes">1. Outcomes</a></li>
+    <li><a href="#schedule">2. Schedule</a></li>
+    <li><a href="#cheatsheet">3. Core Concepts</a></li>
+    <li><a href="#demo">4. Demo</a></li>
+    <li><a href="#notes">5. Notes</a></li>
+    <li><a href="#activity">6. Activity</a></li>
+    <li><a href="#reference">7. Reference</a></li>
+    <li><a href="#assessment">8. Assessment</a></li>
+    <li><a href="#homework">9. Homework</a></li>
+    <li><a href="#mistakes">10. Mistakes</a></li>
+    <li><a href="#checklist">11. Checklist</a></li>
+    <li><a href="#extras">12. Extensions</a></li>
+  </ul>
+
+  <section id="outcomes">
+    <h2>1. Learning Outcomes</h2>
+    <ol>
+      <li>Describe the HTML document skeleton.</li>
+      <li>Use common elements: headings, paragraphs, images, buttons, forms, containers.</li>
+      <li>Apply attributes: <code>class</code>, <code>id</code>, <code>type</code>, <code>name</code>, <code>placeholder</code>, <code>alt</code>.</li>
+      <li>Style with basic CSS: color, spacing, alignment, fonts, borders.</li>
+      <li>Build & style a user input form.</li>
+      <li>Attach a simple click/submit event via JavaScript.</li>
+    </ol>
+  </section>
+
+  <section id="schedule">
+    <h2>2. Suggested Schedule (60–75 min)</h2>
+    <table aria-label="Lesson schedule">
+      <thead><tr><th>Time</th><th>Segment</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>0–5</td><td>Welcome & Objectives</td><td>Set expectations</td></tr>
+        <tr><td>5–15</td><td>HTML Structure Intro</td><td>Skeleton + common tags</td></tr>
+        <tr><td>15–25</td><td>Attributes & Semantics</td><td>Meaning + accessibility</td></tr>
+        <tr><td>25–35</td><td>CSS Fundamentals</td><td>Selectors & properties</td></tr>
+        <tr><td>35–45</td><td>Form Construction Demo</td><td>Inputs explained</td></tr>
+        <tr><td>45–60</td><td>Student Activity</td><td>Hands-on build</td></tr>
+        <tr><td>60–70</td><td>Simple JS Event</td><td>Submission feedback</td></tr>
+        <tr><td>70–75</td><td>Review & Exit Ticket</td><td>Reinforcement</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="cheatsheet">
+    <h2>3. Core Concepts Cheat Sheet</h2>
+    <div class="two-col">
+      <p><strong>Skeleton:</strong> <code>&lt;!doctype html&gt;</code> → standards mode.</p>
+      <p><strong>Block vs Inline:</strong> Block (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>) vs inline (<code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>).</p>
+      <p><strong>Attributes:</strong> <code>class</code> (style hook), <code>id</code> (unique), <code>name</code> (form key), <code>placeholder</code>, <code>type</code>, <code>alt</code>.</p>
+      <p><strong>CSS Rule:</strong> <code>selector { property: value; }</code></p>
+      <p><strong>Common CSS:</strong> <code>color</code>, <code>background</code>, <code>margin</code>, <code>padding</code>, <code>border</code>, <code>font-size</code>, <code>display</code>.</p>
+      <p><strong>Events:</strong> <code>click</code>, <code>focus</code>, <code>submit</code>, <code>mouseover</code>. CSS pseudo-classes <code>:hover</code>, <code>:focus</code>.</p>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2>4. Live Demo Walkthrough</h2>
+    <h3>4.1 Minimal HTML Page</h3>
+    <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+  &lt;title&gt;Day 1 Demo&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles-demo.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to the Aquarium Form&lt;/h1&gt;
+    &lt;p class="intro"&gt;Today we learn HTML &amp; CSS basics.&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;section id="info"&gt;
+    &lt;h2&gt;About&lt;/h2&gt;
+    &lt;p&gt;This page collects visitor interests for future events.&lt;/p&gt;
+    &lt;img src="image/reef.jpeg" alt="Colorful coral reef" width="300" /&gt;
+  &lt;/section&gt;
+  &lt;section id="signup" aria-label="Visitor interest form"&gt;
+    &lt;h2&gt;Sign Up&lt;/h2&gt;
+    &lt;form id="interestForm" action="#" method="post"&gt;
+      &lt;div class="field"&gt;
+        &lt;label for="name"&gt;Name&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" placeholder="Your full name" required /&gt;
+      &lt;/div&gt;
+      &lt;div class="field"&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" placeholder="you@example.com" required /&gt;
+      &lt;/div&gt;
+      &lt;div class="field"&gt;
+        &lt;label for="favorite"&gt;Favorite Exhibit&lt;/label&gt;
+        &lt;select id="favorite" name="favorite"&gt;
+          &lt;option value="reef"&gt;Coral Reef&lt;/option&gt;
+          &lt;option value="shark"&gt;Sharks&lt;/option&gt;
+          &lt;option value="jellyfish"&gt;Jellyfish&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class="field"&gt;
+        &lt;label for="comments"&gt;Comments&lt;/label&gt;
+        &lt;textarea id="comments" name="comments" rows="4" placeholder="Any interests or questions..."&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="primary-btn"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;div id="message" class="hidden" role="alert"&gt;&lt;/div&gt;
+  &lt;/section&gt;
+  &lt;script src="demo.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <h3>4.2 Basic Styles (<code>styles-demo.css</code>)</h3>
+    <pre><code>*{box-sizing:border-box;font-family:system-ui,Arial,sans-serif;}
+body{margin:0;background:#f5fbff;color:#0f2233;line-height:1.5;padding:1rem;}
+header{text-align:center;padding:1rem 0;margin-bottom:1rem;background:#ffffff;border:1px solid #d9e6f2;border-radius:.5rem;}
+.intro{color:#4b6476;}
+section{max-width:720px;margin:0 auto 1.5rem;padding:1rem;background:#ffffff;border:1px solid #d9e6f2;border-radius:.5rem;}
+#info img{display:block;margin:0.5rem auto;border-radius:.5rem;border:2px solid #89c8ff;}
+form{display:grid;gap:1rem;}
+.field{display:grid;gap:.35rem;}
+label{font-weight:600;}
+input,select,textarea{padding:.6rem .7rem;border:1px solid #b7c9d9;border-radius:.5rem;font-size:1rem;background:#fdfdfd;}
+input:focus,select:focus,textarea:focus{outline:2px solid #0077ff;background:#ffffff;}
+.primary-btn{cursor:pointer;padding:.7rem 1.1rem;font-size:1rem;border:none;border-radius:.6rem;background:#0077ff;color:#fff;font-weight:600;transition:background .3s, transform .15s;}
+.primary-btn:hover{background:#005fcc;}
+.primary-btn:active{transform:scale(.96);}
+#message{margin-top:1rem;padding:.8rem 1rem;border-radius:.5rem;border:1px solid #0077ff;background:#e6f2ff;}
+.hidden{display:none;}
+@media (max-width:600px){body{padding:.5rem;}section{padding:.8rem;}form{gap:.75rem;}}</code></pre>
+    <h3>4.3 Simple JavaScript (<code>demo.js</code>)</h3>
+    <pre><code>const form = document.getElementById('interestForm');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault(); // stop real submission for demo
+  const name = form.name.value.trim();
+  const favorite = form.favorite.value;
+  if(!name){
+    message.textContent = 'Please enter your name.';
+    message.classList.remove('hidden');
+    message.style.borderColor = '#cc3300';
+    return;
+  }
+  message.textContent = `Thanks, ${name}! We noted your interest in ${favorite}.`; 
+  message.classList.remove('hidden');
+  form.reset();
+});</code></pre>
+  </section>
+
+  <section id="notes">
+    <h2>5. Teaching Notes & Talking Points</h2>
+    <ul>
+      <li>Separation of concerns: HTML (structure), CSS (presentation), JS (behavior).</li>
+      <li><code>required</code> attribute gives built‑in validation.</li>
+      <li>Accessibility: <code>alt</code> text, <code>label</code>/<code>for</code> pairing, meaningful button text.</li>
+      <li>Progressive enhancement: page usable without JavaScript.</li>
+    </ul>
+  </section>
+
+  <section id="activity">
+    <h2>6. Guided Student Activity (Core)</h2>
+    <ol>
+      <li>Create <code>day1-form.html</code> skeleton + heading.</li>
+      <li>Add purpose paragraph.</li>
+      <li>Insert image with descriptive <code>alt</code>.</li>
+      <li>Build form: name, email, select (3 options), comments, submit button.</li>
+      <li>Link CSS; style background, borders, spacing.</li>
+      <li>Add button hover effect.</li>
+      <li>Add JS submit feedback message.</li>
+    </ol>
+    <h3>Stretch Goals (Optional)</h3>
+    <ul>
+      <li>Clear form button.</li>
+      <li>Textarea character counter.</li>
+      <li>Use <code>:focus-visible</code> for keyboard focus.</li>
+      <li>Pulsing keyframe animation on hover.</li>
+    </ul>
+  </section>
+
+  <section id="reference">
+    <h2>7. Quick Reference Snippets</h2>
+    <ul>
+      <li>Link CSS: <code>&lt;link rel="stylesheet" href="styles-demo.css" /&gt;</code></li>
+      <li>Link JS: <code>&lt;script src="demo.js"&gt;&lt;/script&gt;</code></li>
+      <li>Button hover: <code>.primary-btn:hover { background:#005fcc; }</code></li>
+      <li>Textarea example: <code>&lt;textarea rows="4" placeholder="Your message..."&gt;&lt;/textarea&gt;</code></li>
+    </ul>
+  </section>
+
+  <section id="assessment">
+    <h2>8. Assessment (Exit Ticket)</h2>
+    <ol>
+      <li>Two differences between <code>id</code> and <code>class</code>?</li>
+      <li>Purpose of <code>placeholder</code>?</li>
+      <li>Where to place CSS/JS links?</li>
+      <li>One way CSS can aid accessibility?</li>
+    </ol>
+  </section>
+
+  <section id="homework">
+    <h2>9. Homework</h2>
+    <div class="callout">
+      <p><strong>Task:</strong> Build a personal feedback form (Name, Email, Favorite Animal, Feedback). Style it and show a thank‑you message on submit. BONUS: Validate non‑empty fields.</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2>10. Common Mistakes to Watch</h2>
+    <table aria-label="Common mistakes">
+      <thead><tr><th>Mistake</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>Forgot <code>&lt;!doctype html&gt;</code></td><td>Always include for standards mode.</td></tr>
+        <tr><td>Missing image <code>alt</code></td><td>Add descriptive text.</td></tr>
+        <tr><td>Using <code>&lt;br&gt;</code> for spacing</td><td>Use CSS margin/padding.</td></tr>
+        <tr><td>Inline styles everywhere</td><td>Prefer external CSS file.</td></tr>
+        <tr><td>Not resetting form</td><td>Call <code>form.reset()</code> after confirmation.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="checklist">
+    <h2>11. Instructor Checklist</h2>
+    <ul class="checklist">
+      <li>Objectives visible at start</li>
+      <li>Demo files ready (<code>styles-demo.css</code>, <code>demo.js</code>)</li>
+      <li>Image assets accessible</li>
+      <li>Students create from scratch</li>
+      <li>Accessibility emphasized</li>
+      <li>Exit ticket collected</li>
+    </ul>
+  </section>
+
+  <section id="extras">
+    <h2>12. Extension Ideas</h2>
+    <ul>
+      <li>Add a Google Font (e.g., Poppins).</li>
+      <li>Introduce CSS variables for color theme.</li>
+      <li>Show form states: <code>:focus</code>, <code>:valid</code>, <code>:invalid</code>.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  Day 1 Lesson &bull; Generated for teaching &bull; Adapt timing as needed.
+</footer>
+</body>
+</html>
