@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 2 Demo — Responsive Layouts</title>
+  <link rel="stylesheet" href="styles-day2.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <a class="brand" href="#">BlueDepth</a>
+    <button id="menuToggle" aria-expanded="false" aria-controls="navLinks" class="menu">☰</button>
+    <nav id="navLinks" class="links" aria-label="Main navigation">
+      <a href="#cards">Layout</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="cards" class="cards">
+      <article class="card">Box A</article>
+      <article class="card">Box B</article>
+      <article class="card">Box C</article>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <img src="image/reef.jpeg" alt="Reef" loading="lazy" />
+      <img src="image/shark.jpeg" alt="Shark" loading="lazy" />
+      <img src="image/jerryfish.jpeg" alt="Jellyfish" loading="lazy" />
+      <img src="image/fish1.jpeg" alt="Fish 1" loading="lazy" />
+      <img src="image/fish2.jpeg" alt="Fish 2" loading="lazy" />
+      <img src="image/fish3.jpeg" alt="Fish 3" loading="lazy" />
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Resize the window or use DevTools device toolbar to test responsive behavior.</p>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+    const btn = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    btn?.addEventListener('click', ()=>{
+        const open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+    });
+    })();
+  </script>
+</body>
+</html>

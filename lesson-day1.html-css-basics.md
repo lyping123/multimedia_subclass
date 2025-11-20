@@ -294,8 +294,8 @@ Create a personal feedback form:
 - Introduce CSS variables for colors.
 - Show form field states (`:focus`, `:disabled`, `:valid`, `:invalid`).
 
-## 13. today outcome
-<img src="/imgge/lesson1 html.png" />
+## 13. Today outcome
+<img src="imgge/lesson1 html.png" />
 
 ---
 Feel free to modify timings based on class pacing. Keep explanations concise; let students build early and often.
