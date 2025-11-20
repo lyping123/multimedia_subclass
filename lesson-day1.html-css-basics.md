@@ -295,7 +295,7 @@ Create a personal feedback form:
 - Show form field states (`:focus`, `:disabled`, `:valid`, `:invalid`).
 
 ## 13. today outcome
-<img src="lesson1 html.png" />
+<img src="/imgge/lesson1 html.png" />
 
 ---
 Feel free to modify timings based on class pacing. Keep explanations concise; let students build early and often.
